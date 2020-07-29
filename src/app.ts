@@ -2,9 +2,9 @@ import * as express from "express";
 import { createServer, Server } from 'http';
 import * as socketIo from 'socket.io';
 
-import { queue } from './rabbit';
+import { queue } from './rabbit/rabbit';
 
-import { encodeToken, decodeToken, User } from './session';
+import { encodeToken, decodeToken, User } from './session/session';
 
 interface Message {
   userId: number
@@ -142,7 +142,7 @@ class App {
     });
 
     this.io.on('connection', (socket: any) => {
-      console.log('a user connected');
+      console.log('a user connected opa!!');
       this.sendMessage(socket);
 
       socket.on('chat message', (m: any) => {

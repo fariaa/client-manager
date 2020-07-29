@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc -w",
-    "prestart": "copyfiles *.html dist/",
+    "prestart": "copyfiles *.html dist/src",
     "start": "nodemon dist/server.js"
   },
   "keywords": [],
