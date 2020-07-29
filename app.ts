@@ -141,7 +141,6 @@ class App {
       return next(new Error('authentication error'));
     });
 
-
     this.io.on('connection', (socket: any) => {
       console.log('a user connected');
       this.sendMessage(socket);
@@ -149,7 +148,6 @@ class App {
       socket.on('chat message', (m: any) => {
         this.io.emit('chat message', m);
       });
-
 
       socket.on('disconnect', () => {
         let index: Number | null = null;

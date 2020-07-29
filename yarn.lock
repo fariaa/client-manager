@@ -14,14 +14,6 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/amqp@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@types/amqp/-/amqp-0.2.4.tgz#6507b111c64caed21451c73b2a344f77b3e8d7e2"
-  integrity sha512-6EG+diZKMU/NaHZ+FA35zb/Cj9F3uevPap11LHVNFscJtTxttTHkstmQ4FIx7wmxLqQWUV3lcEFWfGpndHW0rQ==
-  dependencies:
-    "@types/events" "*"
-    "@types/node" "*"
-
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
@@ -41,11 +33,6 @@
   integrity sha512-2+FrkXY4zllzTNfJth7jOqEHC+enpLeGslEhpnTAkg21GkRrWV4SsAtqchtT4YS9/nODBU2/ZfsBY2X4J/dX7A==
   dependencies:
     "@types/node" "*"
-
-"@types/events@*":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
-  integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
 "@types/express-serve-static-core@*":
   version "4.17.9"
@@ -138,13 +125,6 @@ amqp-ts@^1.8.0:
     amqplib "^0.4.1"
     bluebird "^3.3.5"
     winston "^2.2.0"
-
-amqp@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/amqp/-/amqp-0.2.7.tgz#738cfc45fd9c99260b45d5fafc32ed000841e1b1"
-  integrity sha1-c4z8Rf2cmSYLRdX6/DLtAAhB4bE=
-  dependencies:
-    lodash "^4.0.0"
 
 amqplib@^0.4.1:
   version "0.4.2"
@@ -1002,11 +982,6 @@ latest-version@^5.0.0:
   integrity sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==
   dependencies:
     package-json "^6.3.0"
-
-lodash@^4.0.0:
-  version "4.17.19"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lowercase-keys@^1.0.0, lowercase-keys@^1.0.1:
   version "1.0.1"
