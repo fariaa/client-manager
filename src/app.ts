@@ -1,6 +1,8 @@
 import * as express from "express";
 import { createServer, Server } from 'http';
 import * as socketIo from 'socket.io';
+import * as cors from 'cors';
+import * as bodyParser from 'body-parser';
 
 import { queue } from './rabbit/rabbit';
 
@@ -28,22 +30,46 @@ class App {
 
   public PORT: number = 8100;
   public SECRET_KEY_HERE = "teste";
+  public count: number = 1;
 
   constructor() {
     this.clients = new Map();
     this.messageNotReceived = new Map();
+    this.app = express();
+    this.app.use(cors(
+      {
+        origin: '*'
+      }
+    ))
+
+    this.app.use(bodyParser.json())
 
     this.routes();
     this.sockets();
+
     this.listen();
     this.consumer();
   }
 
   routes() {
-    this.app = express();
     this.app.route("/").get((req, res) => {
       res.sendFile(__dirname + '/index.html');
     });
+
+
+    this.app.route('/login').post((req, res) => {
+
+      const { email, password } = req.body;
+
+      const user: User = {
+        id: this.count,
+        name: email
+      }
+      const token: string = encodeToken(this.SECRET_KEY_HERE, user)
+      res.json({
+        token
+      })
+    })
 
     this.app.route("/user").get((req, res) => {
 
@@ -84,7 +110,9 @@ class App {
 
   private sockets(): void {
     this.server = createServer(this.app);
+
     this.io = socketIo(this.server);
+    this.io.origins(['*:*']);
   }
 
 
@@ -126,6 +154,8 @@ class App {
     };
 
     this.io.use((socket, next) => {
+
+      console.log("opa!!")
       const header = socket.handshake.headers['authorization'];
       let access: ValidJWT = { ret: false };
 
